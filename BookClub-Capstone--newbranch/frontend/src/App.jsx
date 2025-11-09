@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 import { AuthProvider } from './context/AuthContext';
+import ErrorBoundary from './utils/ErrorBoundary';
 import PrivateRoute from './utils/PrivateRoute';
 import LandingPage from './pages/LandingPage.jsx';
 import Home from './pages/Home.jsx';
@@ -24,25 +25,27 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}> {/* ✅ Now `theme` is defined */}
-      <CssBaseline />
-      <AuthProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
-            <Route path="/books" element={<PrivateRoute><BookSearch /></PrivateRoute>} />
-            <Route path="/books/:id" element={<PrivateRoute><BookDetailPage /></PrivateRoute>} />
-            <Route path="/groups/:groupId" element={<PrivateRoute><GroupPage /></PrivateRoute>} />
-            <Route path="/groups/:groupId/discussion" element={<PrivateRoute><DiscussionForum /></PrivateRoute>} />
-            <Route path="/groups/:groupId/read" element={<PrivateRoute><ReadingPage /></PrivateRoute>} />
-            <Route path="/groups/:groupId/schedule" element={<PrivateRoute><ChapterSchedulePage /></PrivateRoute>} />
-          </Routes>
-        </BrowserRouter>
-      </AuthProvider>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <AuthProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
+              <Route path="/books" element={<PrivateRoute><BookSearch /></PrivateRoute>} />
+              <Route path="/books/:id" element={<PrivateRoute><BookDetailPage /></PrivateRoute>} />
+              <Route path="/groups/:groupId" element={<PrivateRoute><GroupPage /></PrivateRoute>} />
+              <Route path="/groups/:groupId/discussion" element={<PrivateRoute><DiscussionForum /></PrivateRoute>} />
+              <Route path="/groups/:groupId/read" element={<PrivateRoute><ReadingPage /></PrivateRoute>} />
+              <Route path="/groups/:groupId/schedule" element={<PrivateRoute><ChapterSchedulePage /></PrivateRoute>} />
+            </Routes>
+          </BrowserRouter>
+        </AuthProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 
