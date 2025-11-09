@@ -1,0 +1,44 @@
+ERROR 2025-11-10 00:18:50,458 exceptions Error occurred: Authentication credentials were not provided.
+Traceback (most recent call last):
+  File "C:\Users\vatsavai.devi\AppData\Local\Programs\Python\Python314\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vatsavai.devi\AppData\Local\Programs\Python\Python314\Lib\site-packages\rest_framework\views.py", line 421, in initial
+    self.check_permissions(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\vatsavai.devi\AppData\Local\Programs\Python\Python314\Lib\site-packages\rest_framework\views.py", line 339, in check_permissions
+    self.permission_denied(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+        message=getattr(permission, 'message', None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        code=getattr(permission, 'code', None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\vatsavai.devi\AppData\Local\Programs\Python\Python314\Lib\site-packages\rest_framework\views.py", line 180, in permission_denied
+    raise exceptions.NotAuthenticated()
+rest_framework.exceptions.NotAuthenticated: Authentication credentials were not provided.
+ERROR 2025-11-10 00:18:50,465 exceptions Error occurred: Authentication credentials were not provided.
+Traceback (most recent call last):
+  File "C:\Users\vatsavai.devi\AppData\Local\Programs\Python\Python314\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vatsavai.devi\AppData\Local\Programs\Python\Python314\Lib\site-packages\rest_framework\views.py", line 421, in initial
+    self.check_permissions(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\vatsavai.devi\AppData\Local\Programs\Python\Python314\Lib\site-packages\rest_framework\views.py", line 339, in check_permissions
+    self.permission_denied(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+        message=getattr(permission, 'message', None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        code=getattr(permission, 'code', None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\vatsavai.devi\AppData\Local\Programs\Python\Python314\Lib\site-packages\rest_framework\views.py", line 180, in permission_denied
+    raise exceptions.NotAuthenticated()
+rest_framework.exceptions.NotAuthenticated: Authentication credentials were not provided.
