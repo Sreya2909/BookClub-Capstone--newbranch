@@ -73,7 +73,7 @@ export default function FloatingImages() {
       </Box>
 
       {/* CSS for the animation */}
-      <style jsx>{`
+      <style>{`
         @keyframes scroll {
           0% {
             transform: translateX(0);
